@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="E:/Workspaces/Eclipse Luna/GeneratorTest/lib/mysql.jar" />
+
+	<context id="xzxt" targetRuntime="MyBatis3">
+		<!-- <jdbcConnection 
+			driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.56.12.46:1521:orcl" 
+			userId="xzxt_1"
+			password="xzxt_1">
+		</jdbcConnection>-->
+		
+		<jdbcConnection 
+			driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/weixin" 
+			userId="root"
+			password="root">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="com.tian.mybatis.model" targetProject="E:/Workspaces/Eclipse Luna/GeneratorTest/src" ></javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="sqlmap" targetProject="E:/Workspaces/Eclipse Luna/GeneratorTest/config" ></sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.tian.mybatis.dao" targetProject="E:/Workspaces/Eclipse Luna/GeneratorTest/src" ></javaClientGenerator>
+
+		<table schema="" tableName="pay_set" ></table>
+
+	</context>
+</generatorConfiguration>

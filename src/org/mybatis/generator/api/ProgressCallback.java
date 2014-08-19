@@ -20,9 +20,10 @@ package org.mybatis.generator.api;
  * file generation process.
  * 
  * During the execution of code generation, there are three main operations:
- * database introspection, code generation based on the results of
- * introspection, and then merging/saving generated files. Methods
- * in this interface accordingly and in this order:
+ * 1、database introspection, 
+ * 2、code generation based on the results of introspection, 
+ * 3、and then merging/saving generated files. 
+ * Methods in this interface accordingly and in this order:
  * <ol>
  * <li>introspectionStarted(int)</li>
  * <li>(Repeatedly) startTask(String)</li>

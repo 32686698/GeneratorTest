@@ -164,6 +164,7 @@ public class DatabaseIntrospector {
             throws SQLException {
 
         // get the raw columns from the DB
+    	//从数据库得到列信息
         Map<ActualTableName, List<IntrospectedColumn>> columns = getColumns(tc);
 
         if (columns.isEmpty()) {
@@ -171,7 +172,8 @@ public class DatabaseIntrospector {
                     tc.getSchema(), tc.getTableName()));
             return null;
         }
-
+        
+        //移除配置中忽略的列，不做处理
         removeIgnoredColumns(tc, columns);
         calculateExtraColumnInformation(tc, columns);
         applyColumnOverrides(tc, columns);

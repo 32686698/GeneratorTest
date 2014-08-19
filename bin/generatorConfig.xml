@@ -8,11 +8,15 @@
 	<classPathEntry location="${project.root}/lib/ojdbc14.jar" />
 
 	<context id="xzxt" targetRuntime="MyBatis3">
+		<commentGenerator>  
+        	<!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+        	<property name="suppressAllComments" value="true" />  
+      	</commentGenerator>  
 		<jdbcConnection 
 			driverClass="oracle.jdbc.driver.OracleDriver"
 			connectionURL="jdbc:oracle:thin:@192.168.1.109:1521:orcl" 
-			userId="xzxt02"
-			password="xzxt02">
+			userId="xzxt01"
+			password="xzxt01">
 		</jdbcConnection>
 		
 		<!-- jdbcConnection 
@@ -28,7 +32,7 @@
 
 		<javaClientGenerator type="XMLMAPPER" targetPackage="com.tian.mybatis.dao" targetProject="${project.root}/src" ></javaClientGenerator>
 
-		<table schema="" tableName="sys_user" ></table>
+		<table schema="xzxt02" tableName="sys_user" ></table>
 
 	</context>
 </generatorConfiguration>

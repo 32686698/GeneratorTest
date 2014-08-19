@@ -212,6 +212,7 @@ public class MyBatisGenerator {
         }
 
         // now run the introspections...
+        //1、数据库内省
         int totalSteps = 0;
         for (Context context : contextsToRun) {
             totalSteps += context.getIntrospectionSteps();
@@ -224,6 +225,7 @@ public class MyBatisGenerator {
         }
 
         // now run the generates
+        //2、生成代码
         totalSteps = 0;
         for (Context context : contextsToRun) {
             totalSteps += context.getGenerationSteps();
@@ -236,9 +238,10 @@ public class MyBatisGenerator {
         }
 
         // now save the files
+        //3、保存文件
         callback.saveStarted(generatedXmlFiles.size()
                 + generatedJavaFiles.size());
-
+        //保存XML映射文件
         for (GeneratedXmlFile gxf : generatedXmlFiles) {
             projects.add(gxf.getTargetProject());
 
@@ -276,7 +279,7 @@ public class MyBatisGenerator {
                     "Progress.15", targetFile.getName())); //$NON-NLS-1$
             writeFile(targetFile, source, "UTF-8"); //$NON-NLS-1$
         }
-
+        //保存java文件
         for (GeneratedJavaFile gjf : generatedJavaFiles) {
             projects.add(gjf.getTargetProject());
 

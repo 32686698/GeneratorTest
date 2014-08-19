@@ -252,7 +252,7 @@ public class MyBatisGenerator {
                         .getTargetProject(), gxf.getTargetPackage());
                 targetFile = new File(directory, gxf.getFileName());
                 if (targetFile.exists()) {
-                    if (gxf.isMergeable()) {
+                    if (gxf.isMergeable()) {	//合并代码
                         source = XmlFileMergerJaxp.getMergedSource(gxf,
                                 targetFile);
                     } else if (shellCallback.isOverwriteEnabled()) {
@@ -334,6 +334,9 @@ public class MyBatisGenerator {
      * @param content
      */
     private void writeFile(File file, String content, String fileEncoding) throws IOException {
+    	if(file.exists()){
+    		file.delete();
+    	}
         FileOutputStream fos = new FileOutputStream(file, false);
         OutputStreamWriter osw;
         if (fileEncoding == null) {

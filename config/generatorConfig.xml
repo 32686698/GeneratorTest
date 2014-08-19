@@ -31,7 +31,8 @@
 		<sqlMapGenerator targetPackage="sqlmap" targetProject="${project.root}/config" ></sqlMapGenerator>
 
 		<javaClientGenerator type="XMLMAPPER" targetPackage="com.tian.mybatis.dao" targetProject="${project.root}/src" ></javaClientGenerator>
-
+	
+		<!-- schema 如果数据库是oracle则表示用户。如果为空的话，它会去查找所有用户下的表名为tableName的表。具体会处理哪个就不清楚了-->
 		<table schema="xzxt02" tableName="sys_user" ></table>
 
 	</context>
